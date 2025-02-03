@@ -35,5 +35,3 @@ model <- lm(weights ~ dates, data=df[6:24,])
 predict(model, dates=as.Date("2025-01-03","2025-01-04"))
 
 lm(weights ~ dates, data=df[6:24,])
-
-1000/58
