@@ -1,3 +1,3 @@
 ## Replacing text
 
-"Adding some new text now"
+"Deleted text"
