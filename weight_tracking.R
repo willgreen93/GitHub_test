@@ -23,22 +23,11 @@ ggplot(df[1:nrow(df),], aes(x=dates, y=weights, color=measure)) +
   theme_bw() +
   theme(legend.position="none")
 
-ggplot(df[4:nrow(df),], aes(x=dates, y=weights, color=measure)) +
-  geom_point() +
-  theme_bw() +
-  geom_smooth(method = "lm", formula = y ~ x, se = TRUE, size=0.1, color="black", alpha=0.2, linetype="dashed") +
-  theme_bw() +
-  theme(legend.position="none")
-
 ggplot(rbind(df[1:nrow(df),], data.frame(dates=new_dates, weights=prediction, measure="future")), aes(x=dates, y=weights, color=measure)) +
   geom_point() +
   theme_bw() +
   geom_smooth(method = "lm", formula = y ~ x, se = TRUE, size=0.1, color="black", alpha=0.2, linetype="dashed") +
   theme_bw() +
   theme(legend.position="none")
-
-
-model <- lm(weights ~ dates, data=df[6:24,])
-predict(model, dates=as.Date("2025-01-03","2025-01-04"))
 
 lm(weights ~ dates, data=df[6:24,])
